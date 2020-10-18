@@ -60,3 +60,21 @@ DesktofParser::Run(std::string exec) {
 	
 	_run.RunFunction(exec);
 }
+
+
+void
+DesktofParser::Execute_Run(std::string file) {
+	exec = fsplusplus::FindStringWithReturn(file, "Exec=");
+	
+	if(exec != "null")
+		exec = stringtools::EraseAllSubString(exec, "Exec=");
+	
+	if(exec != "null")
+		exec = stringtools::EraseAllSubString(exec, "\n");
+	
+	ExecutePlusPlus _run;
+	
+	_run.ExecuteName("Desktof");
+	
+	_run.RunFunction(exec);
+}

@@ -20,6 +20,7 @@ class DesktofParser {
 public:
 	void Parse(std::string file);
 	void Run(std::string exec);
+	void Execute_Run(std::string file);
 };
 
 
